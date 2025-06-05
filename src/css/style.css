@@ -1,0 +1,47 @@
+:root {
+    --dark : #000000;
+    --light: #F5F5F7;
+    --shadow: 5px 5px 10px rgba(0, 0, 0, 0.25)
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 13%;
+}
+
+.hero {
+    padding-top: 75px;
+    height: 100vh;
+    background: url('../img/hero_bg.jpg') center center/cover no-repeat;
+    h1 {
+        font-size: 60px;
+        color: var(--light);
+        margin-block: 20vh;
+    }
+        
+}
+
+.keywords {
+    display: flex;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.2) 100%);
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    color: var(--light);
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
