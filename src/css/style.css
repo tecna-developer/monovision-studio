@@ -3,6 +3,11 @@
     --light: #F5F5F7;
     --shadow: 5px 5px 10px rgba(0, 0, 0, 0.25)
 }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;  
+}
 
 
 html, body {
@@ -11,6 +16,7 @@ html, body {
     font-weight: 400;
     font-style: normal;
     line-height: normal;
+    letter-spacing: 0%;
     font-size: 16px;
     scroll-behavior: smooth;
     color: var(--dark);
@@ -28,18 +34,21 @@ a {
 }
 
 .container {
-    width: 100%;
-    margin: 0 auto;
-    padding-inline: 13%;
+    max-width: 100%;
+    padding: 0 13%;
 }
 
 .hero {
     position: relative;
     padding-top: 4.7rem;
     height: 100vh;
-    background: url('../img/hero_bg.jpg') center center/cover no-repeat;
+    background-image: url('../img/hero_bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-color: var(--dark);
     color: var(--light);
+    margin-bottom: 5rem;
     h1 {
         font-size: 3.75rem;
         font-weight: 400;
@@ -51,22 +60,65 @@ a {
        font-weight: 100;
        font-size: 2rem;
        letter-spacing: 0%;
+       margin-bottom: 1.25rem;
     }
-        
+}
+.btn {
+    display: inline-flex;
+    padding: .625rem 3.125rem;
+    background-color: transparent;
+    border: .0625rem solid var(--light);
+    color: var(--light);
+    font-weight: 100;
+    font-size: 1rem;
+    min-height: 2.375rem;
+    text-align: center;
+    justify-content: center;
+    align-self: center;
+    margin-bottom: 6.25rem;
+
+}
+
+.location {
+   position: relative;
+    font-weight: 100;
+    font-size: 1rem;
+    margin-bottom: 16.25rem;
+    color: var(--light); 
+    address, a {
+        font-style: normal;
+    }
+    &::before {
+        content: " ";
+        position: absolute;
+        top: -20px;
+        left: -40px;
+        display:block;
+        width: 2.5rem;
+        height: 3.125rem;
+        margin-left: .04375rem;
+        background-image: url('../icon/Arrow.svg');
+        color: #fff;
+    }
 }
 
 .keywords {
     position: absolute;
+    margin: 0 auto;
     bottom: 0;
     display: flex;
+    justify-content: space-between;
     background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.2) 100%);
     align-items: center;
-    column-gap: 40px;
-    padding: 10px;
-    
+    column-gap: 2.5rem;
+    padding: .625rem;
     color: var(--light);
     a {
         text-decoration: none;
         color: inherit;
+        font-weight: 100;
+        font-size: .625rem;
+        letter-spacing: 0;
     }
 }
+
