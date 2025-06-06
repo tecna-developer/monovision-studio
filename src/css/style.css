@@ -1,15 +1,16 @@
 :root {
-    --dark : #000000;
+    --dark: #000000;
     --light: #F5F5F7;
     --shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
     --padding-inline-container: 13%;
     --padding-inline-footer: 10%;
-   
+
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;  
+    padding: 0;
 }
 
 html, body {
@@ -25,11 +26,13 @@ html, body {
     background-color: var(--light);
 
 }
+
 ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
+
 a {
     text-decoration: none;
     color: inherit;
@@ -37,12 +40,12 @@ a {
 
 .container {
     padding-inline: var(--padding-inline-container);
-   
+
 }
 
 .hero {
     position: relative;
-    padding-top: 4.7rem;
+
     min-height: 100vh;
     background-image: url('../img/hero_bg.jpg');
     background-position: center;
@@ -54,22 +57,25 @@ a {
 
     @media screen and (max-width: 1440px) {
         padding-top: 3.5rem;
-          
+
     }
 
 }
 
 .hero__title {
-       font-size: 3.75rem;
-        font-weight: 400;
-        text-transform: uppercase;
-        color: var(--light);
-        margin-bottom: 7.8rem;
-        @media screen  and (max-width: 1440px) {
-            font-size: 3.5rem;
-            margin-bottom: 5rem;
-        }
+    padding-top: 4.7rem;
+    font-size: 3.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--light);
+    margin-bottom: 7.8rem;
+
+    @media screen and (max-width: 1440px) {
+        font-size: 3.5rem;
+        margin-bottom: 5rem;
+    }
 }
+
 .hero__subtitle {
     font-weight: 100;
     font-size: 2rem;
@@ -79,7 +85,9 @@ a {
 }
 
 .btn {
-    display: inline-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: .625rem 3.125rem;
     background-color: transparent;
     border: .0625rem solid var(--light);
@@ -87,74 +95,85 @@ a {
     font-weight: 100;
     font-size: 1rem;
     min-height: 2.375rem;
-    text-align: center;
-    justify-content: center;
-    align-self: center;
+    width: 10rem;
+
     margin-bottom: 6.25rem;
     transition: all .3s ease-in-out;
-    
+
+    &:hover {
+        text-shadow: 4px 4px rgba(0, 0, 0, 0.25);
+        font-weight: 500;
+        box-shadow: var(--shadow);
+        transform: translateY(-5px);
+    }
+
 }
-.btn:hover {
-    text-shadow: 4px 4px rgba(0, 0, 0, 0.25);
-    font-weight: 500;
-    box-shadow: var(--shadow);
-    transform: translateY(-5px);
-}
+
 
 .location {
     position: relative;
     font-weight: 100;
     font-size: 1rem;
-    margin-bottom: 16.25rem;
-    color: var(--light); 
-    address, a {
+    /* margin-bottom: 10rem; */
+    color: var(--light);
+
+    address {
         font-style: normal;
     }
+
     &::before {
         content: " ";
         position: absolute;
         top: -20px;
         left: -45px;
-        display:block;
+        display: block;
         width: 2.5rem;
         height: 3.125rem;
         margin-left: .04375rem;
         background-image: url('../icon/Arrow.svg');
         color: #fff;
     }
+
     @media screen and (max-width: 768px) {
         &::before {
             left: -40px;
         }
-        
+
     }
 }
 
 .keywords {
-    position: absolute;  
+    position: absolute;
+    width: 100%;
+    min-height: 1.25rem;
     bottom: -1.0625rem;
     left: 50%;
     transform: translate(-50%, -50%);
-    min-height: 1.25rem;
+
     padding: 0 360px;
     display: flex;
     justify-content: space-between;
-    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.2) 100%);
+    background-image: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.04) 0%,
+            rgba(0, 0, 0, 0.12) 50%,
+            rgba(0, 0, 0, 0.2) 100%);
     align-items: center;
     column-gap: 2.5rem;
     color: var(--light);
+
     li {
         font-weight: 100;
         font-size: .625rem;
         padding: .625rem;
     }
+
     @media screen and (max-width: 768px) {
         padding: 0 1.25rem;
+
         li:nth-last-child(-n+6) {
             display: none;
         }
-        
-    }
-    
-}
 
+    }
+
+}
