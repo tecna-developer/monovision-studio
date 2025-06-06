@@ -8,8 +8,6 @@
     margin: 0;
     padding: 0;  
 }
-
-
 html, body {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -99,7 +97,7 @@ a {
         content: " ";
         position: absolute;
         top: -20px;
-        left: -40px;
+        left: -45px;
         display:block;
         width: 2.5rem;
         height: 3.125rem;
@@ -107,12 +105,21 @@ a {
         background-image: url('../icon/Arrow.svg');
         color: #fff;
     }
+    @media screen and (max-width: 768px) {
+        &::before {
+            left: -40px;
+        }
+        
+    }
 }
 
 .keywords {
     position: absolute;
-    margin: 0 auto;
-    bottom: 0;
+    text-align: center;
+    bottom: -2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 1.25rem;
     display: flex;
     justify-content: space-between;
     background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.2) 100%);
@@ -120,12 +127,11 @@ a {
     column-gap: 2.5rem;
     padding: .625rem;
     color: var(--light);
-    a {
-        text-decoration: none;
-        color: inherit;
+    li {
         font-weight: 100;
         font-size: .625rem;
         letter-spacing: 0;
     }
+    
 }
 
