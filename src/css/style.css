@@ -5,6 +5,17 @@
     --padding-inline-container: 13%;
     --padding-inline-footer: 10%;
 
+    @media screen and (max-width: 48rem) {
+        --padding-inline-container: 6%;
+        --padding-inline-footer: 6%;
+
+    }
+
+    @media screen and (max-width: 23.4375rem) {
+        --padding-inline-container: .9375rem;
+        --padding-inline-footer: .9375rem;
+    }
+
 }
 
 * {
@@ -45,7 +56,6 @@ a {
 
 .hero {
     position: relative;
-
     min-height: 100vh;
     background-image: url('../img/hero_bg.jpg');
     background-position: center;
@@ -55,9 +65,15 @@ a {
     color: var(--light);
     margin-bottom: 5rem;
 
-    @media screen and (max-width: 1440px) {
+    @media screen and (max-width: 90rem) {
         padding-top: 3.5rem;
+        background-size: 170%;
+    }
 
+    @media screen and (max-width: 48rem) {
+        background-image: url('../img/tablet_bg.png');
+        background-size: 100%;
+        background-position-y: bottom;
     }
 
 }
@@ -70,8 +86,13 @@ a {
     color: var(--light);
     margin-bottom: 7.8rem;
 
-    @media screen and (max-width: 1440px) {
+    @media screen and (max-width: 90rem) {
         font-size: 3.5rem;
+
+    }
+
+    @media screen and (max-width: 48rem) {
+        font-size: 3rem;
         margin-bottom: 5rem;
     }
 }
@@ -79,9 +100,7 @@ a {
 .hero__subtitle {
     font-weight: 100;
     font-size: 2rem;
-    letter-spacing: 0%;
     margin-bottom: 1.25rem;
-
 }
 
 .btn {
@@ -96,7 +115,6 @@ a {
     font-size: 1rem;
     min-height: 2.375rem;
     width: 10rem;
-
     margin-bottom: 6.25rem;
     transition: all .3s ease-in-out;
 
@@ -128,17 +146,27 @@ a {
         left: -45px;
         display: block;
         width: 2.5rem;
-        height: 3.125rem;
+        height: 3.0625rem;
+        background-color: var(--dark);
         margin-left: .04375rem;
         background-image: url('../icon/Arrow.svg');
         color: #fff;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 90rem) {
         &::before {
             left: -40px;
         }
 
+    }
+
+    @media screen and (max-width: 48rem) {
+        &::before {
+            width: 1.875rem;
+            height: 2.375rem;
+            background-image: url('../icon/arrow_tablet.svg');
+            top: -5px;
+        }
     }
 }
 
@@ -146,34 +174,62 @@ a {
     position: absolute;
     width: 100%;
     min-height: 1.25rem;
-    bottom: -1.0625rem;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+    bottom: 0;
     padding: 0 360px;
     display: flex;
     justify-content: space-between;
-    background-image: linear-gradient(180deg,
+    background: linear-gradient(180deg,
             rgba(255, 255, 255, 0.04) 0%,
-            rgba(0, 0, 0, 0.12) 50%,
-            rgba(0, 0, 0, 0.2) 100%);
+            rgba(255, 255, 255, 0.12) 50%,
+            rgba(255, 255, 255, 0.2) 100%);
     align-items: center;
-    column-gap: 2.5rem;
     color: var(--light);
 
     li {
         font-weight: 100;
         font-size: .625rem;
-        padding: .625rem;
+
+        & a {
+            font-size: .625rem;
+            padding: .625rem 0;
+            font-weight: 100;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
     }
 
-    @media screen and (max-width: 768px) {
-        padding: 0 1.25rem;
+    @media screen and (max-width: 90rem) {
+        & {
+            padding: 0 2.5rem;
 
-        li:nth-last-child(-n+6) {
-            display: none;
         }
 
+
+    }
+
+    @media screen and (max-width: 48rem) {
+        & {
+            padding: 0 1.25rem;
+        }
+
+        & li:nth-last-child(-n+6) {
+            display: none;
+
+        }
+    }
+
+    @media screen and (max-width: 23.4375rem) {
+        & {
+            padding: 0 1rem;
+        }
+
+        & li:nth-last-child(-n+11) {
+            display: none;
+
+        }
     }
 
 }
