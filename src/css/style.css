@@ -24,6 +24,8 @@
     padding: 0;
 }
 
+
+
 html, body {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -35,7 +37,6 @@ html, body {
     scroll-behavior: smooth;
     color: var(--dark);
     background-color: var(--light);
-
 }
 
 ul {
@@ -47,6 +48,10 @@ ul {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-block: 0;
 }
 
 .container {
@@ -76,6 +81,15 @@ a {
         background-position-y: bottom;
     }
 
+    @media screen and (max-width: 23.4375rem) {
+        min-height: 31.25rem;
+        background-image: url('../img/mobile_bg.jpg');
+        background-position-y: center;
+
+        background-position-x: right;
+
+    }
+
 }
 
 .hero__title {
@@ -95,19 +109,29 @@ a {
         font-size: 3rem;
         margin-bottom: 5rem;
     }
+
+    @media screen and (max-width: 36rem) {
+        padding-top: 3.125rem;
+        font-size: 1.625rem;
+        margin-bottom: 1.875rem;
+    }
 }
 
 .hero__subtitle {
     font-weight: 100;
     font-size: 2rem;
     margin-bottom: 1.25rem;
+
+    @media screen and (max-width: 36rem) {
+        font-size: 1rem;
+    }
 }
 
 .btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: .625rem 3.125rem;
+    /* padding: .625rem 3.125rem; */
     background-color: transparent;
     border: .0625rem solid var(--light);
     color: var(--light);
@@ -125,8 +149,15 @@ a {
         transform: translateY(-5px);
     }
 
+    @media screen and (max-width: 36rem) {
+        & {
+            width: 7.5rem;
+            min-height: 1.875rem;
+            font-size: .875rem;
+            margin-bottom: 9rem;
+        }
+    }
 }
-
 
 .location {
     position: relative;
@@ -166,6 +197,12 @@ a {
             height: 2.375rem;
             background-image: url('../icon/arrow_tablet.svg');
             top: -5px;
+        }
+    }
+
+    @media screen and (max-width: 36rem) {
+        &::before {
+            display: none;
         }
     }
 }
