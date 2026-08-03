@@ -65,7 +65,7 @@ markup rather than from `node_modules`.
 ```
 index.html         the whole page: hero, about, works, inspiration, customers, footer
 src/css/style.css  every style, ~650 lines, ordered by section
-src/js/script.js   imports the stylesheet; there is no other behaviour
+src/js/script.js   only `import '../css/style.css'` — see the note below
 src/img/           photography
 src/icon/          social and UI icons as SVG
 ```
@@ -78,6 +78,13 @@ BEM-like `block__element` convention (`.hero__title`, `.works__grid`,
 
 Presentational only. The navigation scrolls to anchors, and nothing on the page submits or
 stores anything.
+
+`src/js/script.js` contains a single `import '../css/style.css'`, which was written for a
+bundler that is not in use. Loaded as a real ES module it throws
+`Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of
+"text/css"` on every page load. Nothing breaks — the stylesheet is also linked with a
+`<link>` — but the console error is there until either the `<script>` tag goes or a bundler
+comes back.
 
 ## Deployment
 
@@ -93,4 +100,5 @@ Two consequences:
 - Committing to `main` does not update the live site.
 
 Merging `gh-pages` back into `main` and publishing from a build step would remove the trap.
-The page title is still the placeholder `Document`, on both branches.
+Until then, head changes have to be made on both branches — the title and description fix
+was applied twice for exactly this reason.
