@@ -82,17 +82,12 @@ stores anything.
 
 ## Deployment
 
-Worth knowing before editing: `main` holds the source, but the demo is served from a
-separate `gh-pages` branch, and the two have diverged. `gh-pages` carries fixes that were
-never merged back — relative asset paths instead of absolute `/src/...` ones, an active
-`<link>` to the stylesheet, and Open Graph tags.
+`main` is the source of truth. It used to carry a version that rendered unstyled when opened
+directly — the stylesheet `<link>` commented out, assets on root-absolute `/src/...` paths —
+while a separate `gh-pages` branch held the working copy, so every change to the `<head>` had
+to be made twice. `gh-pages` has since been merged back, and `main` now has the active
+stylesheet link, relative asset paths and the Open Graph tags.
 
-Two consequences:
-
-- Opening `index.html` from `main` directly gives an unstyled page, because the stylesheet
-  link there is commented out and the assets use root-absolute paths.
-- Committing to `main` does not update the live site.
-
-Merging `gh-pages` back into `main` and publishing from a build step would remove the trap.
-Until then, head changes have to be made on both branches — the title and description fix
-was applied twice for exactly this reason.
+The demo is published from `gh-pages`, which also carries `.nojekyll`. Keep the two branches
+in step, or point Pages at `main` and retire `gh-pages` — with the merge in place the branch
+no longer holds anything of its own.
